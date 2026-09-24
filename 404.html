@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join me on Rther</title>
+<meta name="apple-itunes-app" content="app-id=6815055731">
+<link rel="icon" href="/icon.png">
+<link rel="apple-touch-icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0E1A;
+    --surface:#121A2E;
+    --hairline:#22304D;
+    --gold:#C9A227;
+    --gold-light:#E7C877;
+    --gold-dark:#A9820F;
+    --text:#F2EFE9;
+    --text-secondary:#7C879D;
+    --text-tertiary:#5C6577;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Manrope', -apple-system, sans-serif;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:56px 20px 40px;
+  }
+  h1,.headline{ font-family:'Sora', -apple-system, sans-serif; }
+  .icon{
+    width:84px; height:84px;
+    border-radius:20px;
+    box-shadow:0 8px 30px rgba(201,162,39,0.25);
+    margin-bottom:22px;
+  }
+  .pill{
+    display:inline-block;
+    background:rgba(201,162,39,0.1);
+    border:1px solid #3A2F14;
+    color:var(--gold);
+    font-family:'Sora', sans-serif;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.02em;
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+  h1{
+    font-size:32px;
+    font-weight:800;
+    margin:0 0 10px;
+    letter-spacing:-0.02em;
+    text-align:center;
+    max-width:360px;
+  }
+  h1 .name{ color:var(--gold); }
+  .tagline{
+    color:var(--text-secondary);
+    font-size:17px;
+    text-align:center;
+    max-width:340px;
+    line-height:1.5;
+    margin:0 0 32px;
+  }
+  .shots{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:36px;
+  }
+  .shots img{
+    width:170px;
+    max-width:42vw;
+    border-radius:22px;
+    border:1px solid var(--hairline);
+    box-shadow:0 20px 50px rgba(0,0,0,0.45);
+  }
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+    color:#141008;
+    font-family:'Sora', sans-serif;
+    font-weight:700;
+    font-size:16px;
+    text-decoration:none;
+    padding:15px 28px;
+    border-radius:999px;
+    box-shadow:0 10px 30px rgba(201,162,39,0.3);
+  }
+  .note{
+    margin-top:20px;
+    color:var(--text-tertiary);
+    font-size:13px;
+    text-align:center;
+    max-width:300px;
+    line-height:1.5;
+  }
+  .footer{
+    margin-top:auto;
+    padding-top:48px;
+    color:var(--text-tertiary);
+    font-size:13px;
+    text-align:center;
+  }
+  .footer a{ color:var(--text-secondary); }
+</style>
+</head>
+<body>
+  <img class="icon" src="/icon.png" alt="Rther app icon">
+  <div class="pill">FRIEND INVITE</div>
+  <h1 id="headline">Someone invited you to Rther</h1>
+  <p class="tagline" id="tagline">A daily would-you-rather with friends. Get the app, then come back to this link to add them.</p>
+
+  <div class="shots">
+    <img src="/shot_today.jpg" alt="Today's would-you-rather prompts in Rther">
+    <img src="/shot_results.jpg" alt="Results screen showing how friends voted in Rther">
+  </div>
+
+  <a class="cta" id="cta" href="https://apps.apple.com/app/id6815055731">Get Rther on the App Store</a>
+  <p class="note">Already have Rther installed? Tap this same link again from your phone and it'll open right in the app.</p>
+
+  <div class="footer">
+    Rther &middot; <a href="/">rther.app</a>
+  </div>
+
+  <script>
+    // GitHub Pages has no server-side routing, so a path like
+    // /invite/username is served as this 404 page. We recover the
+    // username from the URL client-side and personalize the page.
+    // (When Rther is installed, iOS intercepts this same URL as a
+    // universal link before Safari ever loads this page at all --
+    // this script only ever runs for people who don't have the app yet.)
+    (function () {
+      var match = window.location.pathname.match(/^\/invite\/([^\/]+)\/?$/);
+      if (match) {
+        var username = decodeURIComponent(match[1]);
+        document.title = username + " invited you to Rther";
+        document.getElementById('headline').innerHTML =
+          '<span class="name">' + escapeHtml(username) + '</span> invited you to Rther';
+        document.getElementById('tagline').textContent =
+          'Install the app, then tap this link again on your phone to add ' + username + ' as a friend.';
+      }
+      function escapeHtml(s) {
+        var d = document.createElement('div');
+        d.textContent = s;
+        return d.innerHTML;
+      }
+    })();
+  </script>
+</body>
+</html>

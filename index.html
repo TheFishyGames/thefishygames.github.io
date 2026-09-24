@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rther — a daily would-you-rather with friends</title>
+<meta name="description" content="Three would-you-rather prompts a day. Answer, then see how your friends answered.">
+<meta name="apple-itunes-app" content="app-id=6815055731">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0E1A;
+    --surface:#121A2E;
+    --surface-elevated:#17233D;
+    --hairline:#22304D;
+    --hairline-gold:#3A2F14;
+    --gold:#C9A227;
+    --gold-light:#E7C877;
+    --gold-dark:#A9820F;
+    --crimson:#9C2B3A;
+    --text:#F2EFE9;
+    --text-secondary:#7C879D;
+    --text-tertiary:#5C6577;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Manrope', -apple-system, sans-serif;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:56px 20px 40px;
+  }
+  h1,h2,.headline{ font-family:'Sora', -apple-system, sans-serif; }
+  .icon{
+    width:84px; height:84px;
+    border-radius:20px;
+    box-shadow:0 8px 30px rgba(201,162,39,0.25);
+    margin-bottom:22px;
+  }
+  h1{
+    font-size:38px;
+    font-weight:800;
+    margin:0 0 10px;
+    letter-spacing:-0.02em;
+    text-align:center;
+  }
+  .tagline{
+    color:var(--text-secondary);
+    font-size:17px;
+    text-align:center;
+    max-width:360px;
+    line-height:1.5;
+    margin:0 0 36px;
+  }
+  .shots{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+  }
+  .shots img{
+    width:180px;
+    max-width:44vw;
+    border-radius:22px;
+    border:1px solid var(--hairline);
+    box-shadow:0 20px 50px rgba(0,0,0,0.45);
+  }
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+    color:#141008;
+    font-family:'Sora', sans-serif;
+    font-weight:700;
+    font-size:16px;
+    text-decoration:none;
+    padding:15px 28px;
+    border-radius:999px;
+    box-shadow:0 10px 30px rgba(201,162,39,0.3);
+  }
+  .footer{
+    margin-top:auto;
+    padding-top:56px;
+    color:var(--text-tertiary);
+    font-size:13px;
+    text-align:center;
+  }
+  .footer a{ color:var(--text-secondary); }
+</style>
+</head>
+<body>
+  <img class="icon" src="icon.png" alt="Rther app icon">
+  <h1>Would you rather?</h1>
+  <p class="tagline">Three prompts a day. Answer honestly, then see how your friends answered.</p>
+
+  <div class="shots">
+    <img src="shot_today.jpg" alt="Today's would-you-rather prompts in Rther">
+    <img src="shot_results.jpg" alt="Results screen showing how friends voted in Rther">
+  </div>
+
+  <a class="cta" href="https://apps.apple.com/app/id6815055731">Get Rther on the App Store</a>
+
+  <div class="footer">
+    Rther &middot; <a href="https://apps.apple.com/app/id6815055731">App Store</a>
+  </div>
+</body>
+</html>

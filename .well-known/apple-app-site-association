@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "CUUSQ2G938.com.andrew.Rather",
+        "paths": [ "/invite/*" ]
+      }
+    ]
+  }
+}
